@@ -15,7 +15,6 @@ jobs:
           creds: ${{secrets.AZURE_CREDENTIALS}}
       - name: Push to ACR
         run: |
-          
           az acr login -n labdeployacr
           docker tag myapp:latest labdeployacr.azurecr.io/myapp:latest
           docker push labdeployacr.azurecr.io/myapp:latest
